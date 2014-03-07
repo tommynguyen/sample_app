@@ -44,6 +44,7 @@ describe "User Pages" do
 			it "should create a user" do
 				expect{click_button submit}.to change(User, :count).by(1)
 			end
+<<<<<<< HEAD
       describe "after save page" do
         before {click_button submit}
         let(:user) {User.find_by(email: 'tnguyen@hotmail.com')}
@@ -54,6 +55,24 @@ describe "User Pages" do
 		end
   end
     
+=======
+	      	describe "after save page" do
+		        before {click_button submit}
+		        let(:user) {User.find_by(email: 'tnguyen@hotmail.com')}
+
+		        it {should have_title(user.name)}
+		        it {should have_selector('div.alert.alert-success', text:'Welcome')}
+	      	end
+	      	describe "after saving the user" do
+	      		before{click_button submit}
+	      		let(:user){User.find_by(email: 'tnguyen@hotmail.com')}
+	      		it {should have_link('Sign out')}
+	      		it {should have_title(user.name)}
+	      		it {should have_selector('div.alert.alert-success', text:'Welcome')}
+	      	end
+		end
+  end    
+>>>>>>> sign-in-out
 end
 
  
